@@ -23,7 +23,7 @@ btc_rur_buy = btc_rur["ticker"]["buy"]
 
 total = (btc_usd_sell * usd_rur_sell) / btc_rur_buy
 
-puts total
+#puts total
 
 if total > 1.04
   puts 'fuck yeah!!!'
