@@ -6,7 +6,7 @@ require 'json'
 
 def get(url) 
   uri = URI.parse(url)
-  Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
+  Net::HTTP.start(uri.host, uri.port, {:use_ssl => true}) do |http|
     request = Net::HTTP::Get.new uri.request_uri
     http.request request
   end.body
