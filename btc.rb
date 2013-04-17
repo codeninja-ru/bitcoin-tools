@@ -27,7 +27,7 @@ while true do
 
   btc_total = (btc_usd_sell * usd_rur_sell) / btc_rur_buy
 
-  if btc_total > 1
+  if btc_total > 1.02
     puts 'fuck yeah!!!'
     puts Time.now
     puts "BTC/USD = #{btc_usd_sell} USD/RUR = #{usd_rur_sell} BTC/RUR = #{btc_rur_buy} profit = #{btc_total}"
@@ -41,7 +41,7 @@ while true do
 
   eur_total = (btc_eur_sell * eur_usd_sell) / btc_usd_buy
 
-  if eur_total > 1
+  if eur_total > 1.02
     puts 'fuck yeah!!!'
     puts Time.now
     puts "BTC/EUR = #{btc_eur_sell} EUR/USD = #{eur_usd_sell} BTC/USD = #{btc_usd_buy} profit = #{eur_total}"
@@ -55,7 +55,7 @@ while true do
 
   ltc_total = (ltc_usd_sell * usd_rur_sell) / ltc_rur_buy
 
-  if ltc_total > 1
+  if ltc_total > 1.02
     puts 'fuck yeah!!!'
     puts Time.now
     puts "LTC/USD = #{ltc_usd_sell} USD/RUR = #{usd_rur_sell} LTC/RUR = #{ltc_rur_buy} profit = #{ltc_total}"
