@@ -4,6 +4,8 @@ require 'net/http'
 require 'open-uri'
 require 'json'
 
+@max_depth = 1.002
+
 def get(url) 
   uri = URI.parse(url)
   http = Net::HTTP.new(uri.host, uri.port)
@@ -25,9 +27,9 @@ while true do
   btc_rur = JSON.parse get('https://btc-e.com/api/2/btc_rur/ticker')
   btc_rur_buy = btc_rur["ticker"]["buy"]
 
-  btc_total = (btc_usd_sell * usd_rur_sell) / btc_rur_buy
+  btc_total = (btc_usd_sell * usd_rur_sell * 0.998 * 0.995 * 0.998) / btc_rur_buy
 
-  if btc_total > 1.02
+  if btc_total > @max_depth
     puts 'fuck yeah!!!'
     puts Time.now
     puts "BTC/USD = #{btc_usd_sell} USD/RUR = #{usd_rur_sell} BTC/RUR = #{btc_rur_buy} profit = #{btc_total}"
@@ -39,9 +41,9 @@ while true do
   eur_usd = JSON.parse get('https://btc-e.com/api/2/eur_usd/ticker')
   eur_usd_sell = eur_usd["ticker"]["sell"]
 
-  eur_total = (btc_eur_sell * eur_usd_sell) / btc_usd_buy
+  eur_total = (btc_eur_sell * eur_usd_sell * 0.998 * 0.995 * 0.998) / btc_usd_buy
 
-  if eur_total > 1.02
+  if eur_total > @max_depth
     puts 'fuck yeah!!!'
     puts Time.now
     puts "BTC/EUR = #{btc_eur_sell} EUR/USD = #{eur_usd_sell} BTC/USD = #{btc_usd_buy} profit = #{eur_total}"
@@ -53,9 +55,9 @@ while true do
   ltc_rur = JSON.parse get('https://btc-e.com/api/2/ltc_rur/ticker')
   ltc_rur_buy = ltc_rur["ticker"]["buy"]
 
-  ltc_total = (ltc_usd_sell * usd_rur_sell) / ltc_rur_buy
+  ltc_total = (ltc_usd_sell * usd_rur_sell * 0.998 * 0.995 * 0.998) / ltc_rur_buy
 
-  if ltc_total > 1.02
+  if ltc_total > @max_depth
     puts 'fuck yeah!!!'
     puts Time.now
     puts "LTC/USD = #{ltc_usd_sell} USD/RUR = #{usd_rur_sell} LTC/RUR = #{ltc_rur_buy} profit = #{ltc_total}"
