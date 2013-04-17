@@ -30,7 +30,7 @@ while true do
   if btc_total > 1
     puts 'fuck yeah!!!'
     puts Time.now
-    puts "BTC/USD = #{btc_usd_sell} USD/RUR = #{usd_rur} BTC/RUR = #{btc_rur_buy} profit = #{btc_total}"
+    puts "BTC/USD = #{btc_usd_sell} USD/RUR = #{usd_rur_sell} BTC/RUR = #{btc_rur_buy} profit = #{btc_total}"
   end
 
   btc_eur = JSON.parse get('https://btc-e.com/api/2/btc_eur/ticker')
@@ -58,7 +58,7 @@ while true do
   if ltc_total > 1
     puts 'fuck yeah!!!'
     puts Time.now
-    puts "LTC/USD = #{ltc_usd_sell} USD/RUR = #{usd_rur} LTC/RUR = #{ltc_rur_buy} profit = #{ltc_total}"
+    puts "LTC/USD = #{ltc_usd_sell} USD/RUR = #{usd_rur_sell} LTC/RUR = #{ltc_rur_buy} profit = #{ltc_total}"
   end
 
   sleep 3
