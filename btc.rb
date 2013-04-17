@@ -4,7 +4,7 @@ require 'net/http'
 require 'open-uri'
 require 'json'
 
-@max_depth = 1.002
+@max_depth = 1
 
 def get(url) 
   uri = URI.parse(url)
